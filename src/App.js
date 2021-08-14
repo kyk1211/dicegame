@@ -11,6 +11,7 @@ function App() {
   const [sum, setSum] = useState(0);
   const [gameHistory, setGameHistory] = useState([]);
 
+
   const handleRollClick = () => {
     const nextNum = random(6);
     setNum(nextNum);
