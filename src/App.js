@@ -1,7 +1,10 @@
 import Board from './Board';
 import Button from './Button';
 import { useState } from 'react';
+import logoImg from './assets/logo.png';
 import './App.css';
+import './Dice.css';
+
 
 function random(n) {
   return Math.ceil(Math.random() * n);
@@ -26,11 +29,15 @@ function App() {
   return (
     <div className='App'>
       <div>
+        <img className= 'Dice' src={logoImg} alt='logo' />
+        <h1 className= 'App-title'>Dice game</h1>
+      </div>
+      <div>
         <Button className= 'App-button' color='blue' onClick={handleRollClick}>Throw</Button>
         <Button className= 'App-button' color='red' onClick={handleClearClick}>Go first</Button>
       </div>
-      <div>
-        <Board name='me' color='blue'  gameHistory={myHistory} />
+      <div className='App-boards'>
+        <Board name='me' color='blue'  gameHistory={myHistory} />       
         <Board name='opponent' color='red' gameHistory={otherHistory} />
       </div>
     </div>
